@@ -16,6 +16,13 @@ resource_directory:
   signal: "resources/signal"
 ```
 
+## Telechargement du model (lang)
+Telecharger et installer le model de lang qui vous plait.
+Décompresser le et memoriser son chemin car il faudra l'ajouter au fichier settings.yml par la suite.
+https://github.com/alphacep/vosk-api/blob/master/doc/models.md
+
+Par default, j'integère un model fr basique.
+
 ## Installation
 ```bash
 kalliope install --git-url https://github.com/veka-server/kalliope-vosk.git
