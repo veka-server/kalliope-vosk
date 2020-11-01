@@ -6,15 +6,11 @@ import os
 
 from kalliope.core import Utils
 
-# bricolage d'import a enttoyer
-sys.path.append('./lib')
-from vosk import Model, KaldiRecognizer, SetLogLevel
-sys.path.append('../')
+import importlib
+importlib.import_module('vosk')
 
 from kalliope.stt.Utils import SpeechRecognition
 from speech_recognition import Microphone
-
-SetLogLevel(-1)
 
 class Vosk(SpeechRecognition):
 
@@ -29,7 +25,10 @@ class Vosk(SpeechRecognition):
 
         self.main_controller_callback = callback
         self.language = kwargs.get('language', "model-fr")
+        self.log_level = kwargs.get('log_level', -1)
         self.grammar_file = kwargs.get('grammar_file', None)
+
+        SetLogLevel(self.log_level)
 
         self.set_callback(self.vosk_callback)
         self.start_processing()
