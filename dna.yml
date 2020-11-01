@@ -1,0 +1,11 @@
+---
+name: "vosk"
+type: "stt"
+author: "veka-server"
+
+kalliope_supported_version:
+  - 0.6
+  - 0.7
+tags:
+  - "vosk"
+  - "stt"
