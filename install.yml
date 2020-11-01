@@ -1,0 +1,11 @@
+---
+- name: vosk
+  hosts: localhost
+  gather_facts: no
+  connection: local
+
+  tasks:
+    - name: "Install vosk"
+      pip:
+        name: vosk
+        executable: pip3
