@@ -8,6 +8,7 @@ from kalliope.core import Utils
 
 import importlib
 importlib.import_module('vosk')
+from vosk import Model, KaldiRecognizer, SetLogLevel
 
 from kalliope.stt.Utils import SpeechRecognition
 from speech_recognition import Microphone
