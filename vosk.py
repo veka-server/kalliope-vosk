@@ -40,8 +40,12 @@ class Vosk(SpeechRecognition):
         if not os.path.exists(self.language):
             print("Please download the model from https://alphacephei.com/vosk/models and unpack as "+self.language+" in the current folder.")
             exit (1)
-
-        model = Model(self.language)
+        
+        global model
+        try:
+            model
+        except NameError:
+            model = Model(self.language)
 
         rec = KaldiRecognizer(model, 16000)
 
